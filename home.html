@@ -1,14 +1,128 @@
 <!doctype html>
 
 <html>
-  <head>
-    <title>INSERT TITLE HERE!</title>
-    <link rel="stylesheet" href="index.css">
-    <!-- TODO: add additional links here! e.g. fonts, icons, more stylesheets, etc. -->
-    <meta content="width=device-width, initial-scale=1" name="viewport" />
-  </head>
+    <head>
+        <title>A/B Testing</title>
+        <link rel="stylesheet" href="bootstrap.css">
+        <link rel="stylesheet" href="index.css">
+        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap" rel="stylesheet">
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+    </head>
 
-  <body>
-    <!-- TODO: put your HTML code here! -->
-  </body>
+    <body>
+        <div class="title main">A/B Testing</div>
+        <div class="contents-wrapper">
+        <div class="container-fluid px-5 py-3 grey">
+            <div class="d-flex justify-content-center">
+                <div class="col-6" style="text-align: center">
+                    <p> In this project, I conducted A/B testing on a succulent store website, which consists of a listings
+                        and a checkout page. I created two different variations of the listings page, A and B. Upon visiting the website, users 
+                        are shown one of the two versions randomly.
+                        </p>
+                    <button type="button" class="btn btn-info" onclick="window.location.href='https://gentle-headland-96788.herokuapp.com/'">
+                        Visit website
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid px-5 py-3">
+            <div class="row">
+                <div class="col-6">
+                    <h3 style="text-align: center">Version A</h3>
+                    <img src="VersionA.png">
+                </div>
+                <div class="col-6">
+                    <h3 style="text-align: center">Version B</h3>
+                    <img src="VersionB.png"/>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid px-5 py-3 grey">
+            <div class="d-flex justify-content-center">
+                <div class="col-6" style="text-align: left">
+                    <p> I collected data and ran statistical tests for two metrics: <b>Time to Completion</b> and <b>Return Rate</b>.</p>
+                    <p> When a user opens the website, their clicks, click targets, click times, load times, and page versions were recorded. 
+                        The raw data was then filtered, and parsed into a spreadsheet. For each user, I calculated the time it took to
+                        complete the task (fill their cart to at least $150), and observed whether they returned to the website. 
+                    </p>
+                    <p>Using the collected data for A and B, I ran a <b>two-sample t test</b> to determine whether there was a statistically significant
+                        difference in Time to Completion. I also ran a <b>Chi-squared test</b> to determine whether there was a significant
+                        difference in the Return Rate.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- TIME TO COMPLETION -->
+        <div class="container-fluid px-5 pt-5 pb-2">
+            <div class="row">
+                <div class="col-3">
+                    <h3>Time to Completion</h3>
+                </div>
+                <div class="col-4 px-5">
+                    <h3>Null Hypothesis</h3>
+                    <p>There is no significant difference in users’ time to completion between variations A and B.</p>
+                </div>
+                <div class="col-5 px-5">
+                    <h3>Alternate Hypothesis</h3>
+                    <p>Version B will have a shorter time to completion than version A, due to the differences in layout. 
+                    In version A, all the items are listed vertically, while the items in Version B are listed in a grid format. 
+                    The grid format may allow the user to easily see and consider all the choices at once, reducing the time it takes to complete the task. 
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- RETURN RATES -->
+        <div class="container-fluid px-5 pb-5">
+            <div class="row">
+                <div class="col-3">
+                    <h3>Return Rate</h3>
+                </div>
+                <div class="col-4 px-5">
+                    <h3>Null Hypothesis</h3>
+                    <p>There is no significant difference in users’ return rates between variations A and B.</p>
+                </div>
+                <div class="col-5 px-5">
+                    <h3>Alternate Hypothesis</h3>
+                    <p> Version A will have a lower return rate, since the cart is distant and isolated from the rest of the content; 
+                        while the headers and items are all listed on the left, the cart icon is on the very right. In version B, the horizontal 
+                        listings draw the scan pattern from left to right, leading users to actively look at the cart on the right end, and to 
+                        click on the cart and then return to the listings before completing the task. This results in a higher return rate for B.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- INFOGRAPHIC -->
+        <div class="container-fluid px-5 pb-5">
+            <div class="row">
+                <div class="col-3">
+                    <h3>Statistical Analysis</h3>
+                </div>
+                <div class="col-7 px-5">
+                    <img src="Infographic.png">
+                </div>
+            </div>
+        </div>
+
+        <!-- CONCLUSION -->
+        <div class="container-fluid px-5 py-5 grey">
+            <div class="d-flex justify-content-center">
+                <div class="col-6" style="text-align: left">
+                    <p> As it turns out, the results were not statistically significant. For both metrics
+                        the p-value was above 0.05 (for a 95% confidence level), so we do not have enough evidence to reject the null hypothesis,
+                        and we cannot conclusively state that one design performed better or worse than the other.
+                    </p>
+                    <p> 
+                        This may have been because the variations did not make a significant difference for users' experience, or it may have
+                        been because the sample size (which was only 23 users) was not large enough for meaningful data. 
+                        
+                        Either way, perhaps continuously collecting more data over time, on a larger pool of users, 
+                        will provide more statistically significant results with more meaningful conclusions in the future.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </body>
 </html>
